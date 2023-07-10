@@ -1,14 +1,23 @@
-import Message from './Message';
-import ListGroup from './components/ListGroup';
+import { useState } from "react";
+
 
 function App() {
-  const cities: any = ["Bengaluru", "New Delhi", "Mumbai"],
-        colors: any = ["Red", "Green", "Yellow"];
+      const [game, setGame] = useState({
+            id: 1,
+            player: {
+                  name: "Bhawesh"
+            }
+      });
 
-  return <div>
-            <ListGroup items={cities} heading='Cities'/>
-            <ListGroup items={colors} heading='Colors'/>
-        </div>
+      const handleClick = () => {
+            setGame({ ...game, player: { ...game.player, name: "Verma" } });
+      };
+
+      return (<>
+            <p>{game.player.name}</p>
+            <button type="submit" onClick={handleClick}>My button</button>
+      </>
+      );
 }
 
 export default App;
