@@ -1,9 +1,11 @@
-import { useState } from "react";
-import ExpandableText from "./components/ExpandableText";
-
+import FormValidationWithZod from "./components/FormValidationWithZod";
 
 function App() {
-      return (<ExpandableText maxChar={20} />);
+  return (
+    <>
+      <FormValidationWithZod></FormValidationWithZod>
+    </>
+  );
 }
 
 export default App;
